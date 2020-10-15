@@ -146,6 +146,24 @@ void printReverseZigZag(struct Node *root)
     }
 }
 
+//Inorder traverse the original tree and overwrite its nodes to convert to BST
+void binaryTreetoBST(int *arr, Node *root, int *index_ptr)
+{
+    // Base Case
+    if (root == NULL)
+        return;
+
+    /* first update the left subtree */
+    binaryTreetoBST(arr, root->left, index_ptr);
+
+    /* Now update root's data and increment index */
+    root->data = arr[*index_ptr];
+    (*index_ptr)++;
+
+    /* finally update the right subtree */
+    binaryTreetoBST(arr, root->right, index_ptr);
+}
+
 int main()
 {
     int in[30];
