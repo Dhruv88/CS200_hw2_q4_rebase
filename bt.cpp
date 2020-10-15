@@ -40,6 +40,16 @@ Node *buildTree(int in[], int n)
 }
 
 
+void printPreOrder(Node *node)
+{
+    if (node == NULL)
+        return;
+    printf("%d ", node->data);
+    printPreOrder(node->left);
+    printPreOrder(node->right);
+}
+
+
 int main()
 {
     int in[30];
