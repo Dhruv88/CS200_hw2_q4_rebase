@@ -141,5 +141,41 @@ int main()
     int n = cnt;
     Node *root = buildTree(in, n);
     cout << "The binary tree is constructed\n";
+    
+    //Execute functions according to user choice
+    int choice;
+    cout << "Action menu\n";
+    cout << "Press 1 for printing the pre-order traversal\nPress 2 for printing the post-order traversal\nPress 3 for printing the zigzag traversal\nPress 4 for converting to binary search tree\nPress 0 to exit\n";
+    int converted = 0;
+    do
+    {
+        cout << "Enter Action no.\n";
+        cin >> choice;
+        int i = 0;
+        switch (choice)
+        {
+        case 1:
+            cout << "Preorder of the constructed tree : \n";
+            printPreOrder(root);
+            cout << "\n";
+            break;
+        case 2:
+            cout << "Postorder of the constructed tree : \n";
+            printPostorder(root);
+            cout << "\n";
+            break;
+        case 3:
+            cout << "Zigzag traversal of the constructed tree : \n";
+            printZigZag(root);
+            cout << "\n";
+            break;
+        case 0:
+            cout << "Exited successfully\n";
+            break;
+        default:
+            cout << "Invalid Action no.\n";
+        }
+    } while (choice != 0);
+
     return 0;
 }
