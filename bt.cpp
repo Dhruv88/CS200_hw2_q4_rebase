@@ -215,6 +215,19 @@ int main()
             printZigZag(root);
             cout << "\n";
             break;
+        case 4:
+            if (converted == 0)
+            {
+                sort(in, in + cnt);
+                binaryTreetoBST(in, root, &i);
+                cout << "Converted to BST\n";
+                converted = 1;
+            }
+            else
+            {
+                cout << "Already converted to BST\n";
+            }
+            break;
         case 0:
             cout << "Exited successfully\n";
             break;
